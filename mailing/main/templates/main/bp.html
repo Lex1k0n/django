@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Шаблоны</title>
+</head>
+<body>
+    {% csrf_token %}
+    <a href="{% url 'main' %}" style="font-size: 18px;">На главную</a>
+    <form method="post">
+        {% csrf_token %}
+        <textarea style="width: 100%; font-size: 18px;" rows="9" placeholder="Input blueprint here..." name="bptxt"></textarea>
+        <input name="bpname" placeholder="Name" style="width: 30%; font-size: 18px;">
+        <span>{{ error }}</span>
+        <button>Добавить</button>
+    </form>
+</body>
+</html>

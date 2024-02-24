@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить почту</title>
+</head>
+<body>
+    {% csrf_token %}
+    <a href="{% url 'main' %}" style="font-size: 18px;">На главную</a>
+    <p style="font-size: 18px;">Добавить новую почту</p>
+    <form method="post" style="font-size: 18px;">
+        {% csrf_token %}
+        {{ form }}
+        <span>{{ error }}</span>
+        <p></p>
+        <button style="font-size: 18px;" type="submit" name="addbtn">Добавить</button>
+    </form>
+    <form style="position: relative; top: 20px;" method="post">
+        {% csrf_token %}
+        <select name="delete_mail">
+            {% for mail in mails %}
+                <option>{{ mail }}</option>
+            {% endfor %}
+        </select>
+        <button style="font-size: 18px; position: relative; left: 5px;" type="submit" name="dltbtn">Удалить</button>
+    </form>
+</body>
+</html>

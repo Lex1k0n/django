@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+    <a href="admin/" style="font-size: 18px;">для адмена :)</a>
+    <h1>Текст рассылки</h1>
+    <textarea name="mail_text" style="width: 100%; font-size: 18px;" rows="9" placeholder="Input mailing here...">{{ fill }}</textarea>
+    <form method="post">
+        <button style="font-size: 18px" name="spam">Разослать спам))0)</button>
+        <p></p>
+        {% csrf_token %}
+        <select name="change_bp">
+            {% for name in names %}
+                <option>{{ name }}</option>
+            {% endfor %}
+        </select>
+        <button name="change">Применить шаблон</button>
+    </form>
+    <p></p>
+    <a href="{% url 'add_mail' %}" style="font-size: 18px">Добавить почту для рассылки</a>
+    <a href="{% url 'add_bp' %}" style="font-size: 18px; position: relative; left: 25px">Добавить шаблон</a>
+</body>
+</html>
