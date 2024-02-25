@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import MailForm
 from .models import Mail, Blueprint
 from django.core.mail import send_mail
+import smtplib
 
 
 def index(request):
@@ -20,13 +21,17 @@ def index(request):
         current = Blueprint.objects.get(name=request.POST.get('change_bp'))
         txt_fill = dict_bp[str(current)]
     elif request.method == 'POST' and 'spam' in request.POST:
-        send_mail(
-            'рассылка',
-            request.POST.get('mail_text'),
-            'qwertymaxqazwsx@gmail.com',
-            [mail_lst]
-        )
-        print('dl')
+        for mail in mail_lst:
+            try:
+                send_mail(
+                    'name here',
+                    request.POST.get('mail_text'),
+                    'your address here',
+                    [mail]
+                )
+            except smtplib.SMTPDataError:
+                txt_fill = 'Oops, it seems that your address doesnt have permissions to send email through smtp ' \
+                           'provider! Try to check that you can do this with IT support.'
     return render(request, 'main/index.html', {'names': names, 'fill': txt_fill})
 
 
