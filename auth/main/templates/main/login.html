@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button>Логин</button>
+        <a href="{% url 'main_page' %}">На главную</a>
+        <p>{{ error }}</p>
+    </form>
+</body>
+</html>

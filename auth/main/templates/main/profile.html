@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+    <p>Hello back, {{ user.username }}!</p>
+    <p>Your email: {{ user.email }}</p>
+    <a href="{% url 'main_page' %}">На главную</a>
+    <form method="post">
+        {% csrf_token %}
+        <button name="logout">Logout</button>
+        <button name="change">Change password</button>
+    </form>
+</body>
+</html>
