@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
 from .forms import RegForm, LoginForm, ChangePassForm
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    print(request.user.is_authenticated)
     return render(request, 'main/index.html', {'auth': request.user.is_authenticated})
 
 
@@ -39,6 +38,7 @@ def reg(request):
     return render(request, 'main/reg.html', {'form': form})
 
 
+@login_required
 def profile(request):
     current_user = request.user
     if request.method == 'POST':
@@ -54,6 +54,7 @@ def complete(request):
     return render(request, 'main/complete.html')
 
 
+@login_required
 def change_pswrd(request):
     err = ''
     form = ChangePassForm()
