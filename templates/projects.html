@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects</title>
+</head>
+<body>
+    <h1>Список моих проектов</h1>
+    {% for elem in projects %}
+        <h2>{{ elem.name }}</h2>
+        <a href="projects/{{ elem.id }}">Подробнее</a>
+    {% endfor %}
+    <br>
+    <a href="/">На главную</a>
+</body>
+</html>

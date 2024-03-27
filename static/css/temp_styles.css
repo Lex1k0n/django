@@ -1,0 +1,83 @@
+p {
+    font-size: 20px;
+    position: relative;
+    left: 20px;
+}
+
+h1 {
+    z-index: 10;
+    width: 50%;
+    position: relative;
+    animation-name: greets4;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes greets4 {
+    from {top: 0%; left: 50%; opacity: 0%}
+    to {top: 0%; left: 10%; opacity: 100%}
+}
+
+.main {
+    padding: 30px;
+    border: 10px solid white;
+    display: inline-block;
+    margin: 10px;
+    width: 40%;
+    border-radius: 20px;
+    animation-name: greets5;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    color: white;
+}
+
+@keyframes greets5 {
+    from {opacity: 0%}
+    to {opacity: 100%}
+}
+
+.img {
+    position: relative;
+    left: 350px;
+    height: 95px;
+    width: 150px;
+}
+
+.temp {
+    position: relative;
+    bottom: 150px;
+}
+
+.btn {
+    position: relative;
+    top: 10px;
+    animation-name: greets3;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    margin: 10%;
+    padding: 0.2em 0.2em;
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    transition: 1s;
+    background-size: 200% auto;
+    color: red;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, white 0%, grey 51%, black 100%);
+    animation-name: greets5;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+.btn:hover {
+     background-position: right center;
+}
+
+.video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}

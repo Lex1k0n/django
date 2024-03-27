@@ -1,0 +1,67 @@
+body {
+    background: white;
+}
+
+.greets {
+    width: 35%;
+    text-align: center;
+    animation-name: greets;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    position: relative;
+    color: white;
+}
+
+@keyframes greets {
+    from {top: 0; left: -30%; opacity: 0}
+    to {top: 30%; left: 35%; opacity: 100%}
+}
+
+.greets2 {
+    font-size: 50px;
+    animation-name: greets2;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    position: relative;
+    text-align: center;
+    width:50%;
+    color: orange;
+}
+
+@keyframes greets2 {
+    from {top: 0; left: -30%; opacity: 0}
+    to {top: 30%; left: 20%; opacity: 100%}
+}
+
+.btn {
+    position: relative;
+    top: 200px;
+    margin: 10%;
+    padding: 1em 1em;
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    transition: 1s;
+    background-size: 200% auto;
+    color: red;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, white 0%, grey 51%, black 100%);
+}
+
+.btn:hover {
+     background-position: right center;
+}
+
+@keyframes greets3 {
+    from {opacity: 0%}
+    to {opacity: 100%}
+}
+
+.video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
